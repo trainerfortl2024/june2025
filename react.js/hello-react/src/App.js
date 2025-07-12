@@ -5,6 +5,7 @@ import Employee from './passing-data/Employee';
 import Counter from './states/Counter';
 import Display from './states/Display';
 import Student from './passing-data/Student';
+import DataFetchingComponent from './effects/DataFetchingComponent';
 
 
 function App() {
@@ -30,8 +31,8 @@ function App() {
       <p>This is a simple React App using JSX!</p>
 
       <hr />
-      Total Employees = {empCount} | Total Students = {studCount}
-      <hr />
+      {/* Total Employees = {empCount} | Total Students = {studCount} */}
+      {/* <hr /> */}
       {/* <Greeting 
       name={name} 
       role="trainer" 
@@ -42,8 +43,11 @@ function App() {
       {/* <Display /> */}
 
       {/* passing data between components */}
-      <Employee empCount={empCount} empHandler={empHandler} />
-      <Student studCount={studCount} studHandler={studHandler} />
+      {/* <Employee empCount={empCount} empHandler={empHandler} />
+      <Student studCount={studCount} studHandler={studHandler} /> */}
+
+
+        <DataFetchingComponent />
 
     </div>
   );
