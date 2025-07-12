@@ -1,5 +1,6 @@
 
 import Greeting from './Greeting';
+import Counter from './states/Counter';
 
 
 function App() {
@@ -7,16 +8,20 @@ function App() {
   const names = ["ramesh","ganesh"];
   const employees = [{id:101,name:'ram',salary:1000},
     {id:102,name:'krishna',salary:2000}]
+    const tc = 100;
   return (
     <div>
       <h1>Welcome to React!</h1>
       <p>This is a simple React App using JSX!</p>
       <hr />
-      <Greeting 
+      {/* <Greeting 
       name={name} 
       role="trainer" 
       names={names} 
-      employees={employees}  />
+      employees={employees}  /> */}
+
+      <Counter c={tc} />
+
     </div>
   );
 }

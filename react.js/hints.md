@@ -3,8 +3,8 @@ React is a JavaScript library used to build fast, interactive user interfaces (U
 
 `JSX` is a syntax extension that allows you to write HTML-like code in JavaScript, which is then compiled into standard JavaScript.
 
-`babel`
+`babel` is a transpiler , used to convert jsx code into browser understandable javascript code.
 
-# Functional Component
+# Functional Component and props
 Functional components in React are JavaScript functions that return JSX and are used to build UI components.  
 `Props` allow you to pass data from one component to another, enabling dynamic content in your application. 
