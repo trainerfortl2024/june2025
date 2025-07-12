@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 export default function Counter({c}) {
     const [count,setCount] = useState(c) //model
 
-    //controller
-    const incrementCount = () => {
-        setCount(count+1)
-    }
+    // //controller
+    // const incrementCount = () => {
+    //     setCount(count+1)
+    // }
   return (
     <div>
         Counter - {count} <br />
-        <button onClick={incrementCount}>Increment</button>
+        <button onClick={() => {setCount(count+1)}}>Increment</button>
     </div> //view
   )
 }
