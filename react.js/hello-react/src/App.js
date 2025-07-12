@@ -4,6 +4,7 @@ import Greeting from './Greeting';
 import Employee from './passing-data/Employee';
 import Counter from './states/Counter';
 import Display from './states/Display';
+import Student from './passing-data/Student';
 
 
 function App() {
@@ -19,7 +20,10 @@ function App() {
   const empHandler = (a) => {
     setEmpCount(a)
   }
-  
+   const studHandler = (b) => {
+    setStudCount(b)
+  }
+
   return (
     <div>
       <h1>Welcome to React!</h1>
@@ -37,9 +41,9 @@ function App() {
       {/* <Counter c={tc} /> */}
       {/* <Display /> */}
 
-
       {/* passing data between components */}
       <Employee empCount={empCount} empHandler={empHandler} />
+      <Student studCount={studCount} studHandler={studHandler} />
 
     </div>
   );
