@@ -1,0 +1,2 @@
+Node.js stream demo!
+This is a writable stream.
