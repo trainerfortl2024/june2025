@@ -6,6 +6,10 @@ import Counter from './states/Counter';
 import Display from './states/Display';
 import Student from './passing-data/Student';
 import DataFetchingComponent from './effects/DataFetchingComponent';
+import LoginForm3 from './elements/LoginForm3';
+import LoginForm4 from './elements/LoginForm4';
+import A from './globalstate/A';
+import OrgContext from './globalstate/OrgConext';
 
 
 function App() {
@@ -24,6 +28,10 @@ function App() {
    const studHandler = (b) => {
     setStudCount(b)
   }
+
+
+  //global state
+  const [org,setOrg] = useState('ABC-Chennai')
 
   return (
     <div>
@@ -46,8 +54,17 @@ function App() {
       {/* <Employee empCount={empCount} empHandler={empHandler} />
       <Student studCount={studCount} studHandler={studHandler} /> */}
 
+        {/* Fetching Example */}
+        {/* <DataFetchingComponent /> */}
 
-        <DataFetchingComponent />
+        {/* <LoginForm4 /> */}
+
+        {/* global state */}
+
+        <OrgContext.Provider value={{ org, names }}>
+        <A />
+        </OrgContext.Provider>
+
 
     </div>
   );

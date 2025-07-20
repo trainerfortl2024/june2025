@@ -26,3 +26,32 @@ Functional components in React are JavaScript functions that return JSX and are 
 ### Notes:
 - ✅ Use **state** or **props** in dependency array.
 - ❌ Avoid using **normal variables** (not reactive).
+
+## Controlled Component / UnControlled Component
+- Element = Component
+- Form - 
+        elements (textbox, radio, checkbox, .....)
+- controlled by react - controlled element
+- controlled by DOM - uncontrolled element
+
+
+## useReducer - hook
+### Why?
+useState is great for simple scenarios where you’re managing one or two state   
+values, but when things get more complex, useReducer is a better choice.  
+
+### When to use useState
+When you only need to manage a few simple state values.  
+Example: Tracking the value of a single input field.  
+
+### When to use useReducer
+When you have multiple pieces of state that are related.  
+When the state transitions depend on the type of actions  
+(e.g., setting values, resetting form fields).  
+When you want to make your state logic easier to read and maintain, especially as your app grows.  
+
+
+## Global State Management with Context API
+* The Context API solves the `prop drilling` problem by allowing global state sharing across components without passing `props` manually.  
+
+* `useContext` helps consume the global state in functional components.  
