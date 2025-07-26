@@ -10,6 +10,12 @@ import LoginForm3 from './elements/LoginForm3';
 import LoginForm4 from './elements/LoginForm4';
 import A from './globalstate/A';
 import OrgContext from './globalstate/OrgConext';
+import Home from './routing/Home';
+import About from './routing/About';
+import Contact from './routing/Contact';
+
+// import { Router, Link } from '@reach/router';
+import {BrowserRouter,Link,Routes,Route} from 'react-router-dom'
 
 
 function App() {
@@ -25,20 +31,20 @@ function App() {
   const empHandler = (a) => {
     setEmpCount(a)
   }
-   const studHandler = (b) => {
+  const studHandler = (b) => {
     setStudCount(b)
   }
 
 
   //global state
-  const [org,setOrg] = useState('ABC-Chennai')
+  const [org, setOrg] = useState('ABC-Chennai')
 
   return (
     <div>
       <h1>Welcome to React!</h1>
       <p>This is a simple React App using JSX!</p>
 
-      <hr />
+
       {/* Total Employees = {empCount} | Total Students = {studCount} */}
       {/* <hr /> */}
       {/* <Greeting 
@@ -54,16 +60,46 @@ function App() {
       {/* <Employee empCount={empCount} empHandler={empHandler} />
       <Student studCount={studCount} studHandler={studHandler} /> */}
 
-        {/* Fetching Example */}
-        {/* <DataFetchingComponent /> */}
+      {/* Fetching Example */}
+      {/* <DataFetchingComponent /> */}
 
-        {/* <LoginForm4 /> */}
+      {/* <LoginForm4 /> */}
 
-        {/* global state */}
-
-        <OrgContext.Provider value={{ org, names }}>
+      {/* global state - Context API */}
+      {/* <OrgContext.Provider value={{ org, names }}>
         <A />
-        </OrgContext.Provider>
+        </OrgContext.Provider> */}
+
+
+      {/* Routing - Navigation -using Reach Router (npm i @reach/router --force) */}
+      
+      {/* <hr />
+      <Link to="/">Home</Link>   |    <Link to="/about">About</Link>     |  <Link to="/contact">Contact</Link> |
+      <Link to="/greeting">Greeting</Link>
+      <hr />
+      <Router>
+        <Home path="/" />
+        <About path="/about" />
+        <Contact path="/contact" />
+        
+      </Router> */}
+
+
+
+      {/* Routing - Navigation -using React Router (npm i react-router-dom@6) */}
+
+
+      <BrowserRouter>
+      
+      <Link to="/">Home</Link>   |  <Link to="/about">About</Link>   |  <Link to="/contact">Contact</Link> 
+        
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+
+      </BrowserRouter>
 
 
     </div>
