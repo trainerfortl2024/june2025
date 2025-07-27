@@ -113,3 +113,23 @@ export default function About() {
 
 ### API Integration and Data Fetching
 Local Data -  JSON - [] [{},{},{},....]
+useEffect - 
+useEffect - []
+useEffect - [posts,users]
+
+
+### Testing
+#### Types of Testing
+* Unit Testing - testing part of the project - function , component, 
+* Functional Testing - E2E - As a user you can write test code to test your entire app.
+* Integration Testing - 
+
+#### Frameworks
+Jest - A framework for running and organizing tests.  
+React Testing Library - Focuses on testing from the user’s perspective, not just code.  
+
+
+
+#### Functional Testing 
+Cypress
+

@@ -1,13 +1,8 @@
-export default function Greeting({ name, role, names, employees }) {
+export default function Greeting({name}) {
     return (
         <div>
-            <h1>Welcome to {name} - {role}</h1>
-            {
-                employees.map((emp,index) => {
-                    return <p>{index+1} - {emp.name} - {emp.salary}</p>
-                }
-                )
-            }
+            <h2>Welcome to {name}</h2>
+          
         </div>
     )
 }

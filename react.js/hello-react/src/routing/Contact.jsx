@@ -21,6 +21,6 @@ export default function Contact() {
   return (
     <div>
         <h3>Contact Component</h3>
-        <button onClick={() => {navigate('/')}}>Go home</button>
+        <button data-testid="contactID" onClick={() => {navigate('/')}}>Go home</button>
     </div>  )
 }

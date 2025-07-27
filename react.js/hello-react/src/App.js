@@ -190,12 +190,54 @@
 // // MVC Model View Controller
 
 
+
+// //Data Fetching Demo
+// import Home from './routing/Home';
+// import About from './routing/About';
+// import Contact from './routing/Contact';
+
+// import {BrowserRouter,Link,Routes,Route} from 'react-router-dom'
+// import Posts from './fetching-data/Posts';
+
+// function App() {
+  
+//   return (
+//     <div>
+//       <h1>Welcome to React!</h1>
+//       <p>This is a simple React App using JSX!</p>
+
+//       <BrowserRouter>
+
+//       <Link to="/">Home</Link>   |  <Link to="/about">About</Link>   |  
+//       <Link to="/contact">Contact</Link>   |   <Link to="/posts">Posts</Link> 
+
+//         <Routes>
+//           <Route path="/" element={<Home />} />
+//           <Route path="/about" element={<About />} />
+//           <Route path="/contact" element={<Contact />} />
+//           <Route path="/posts" element={<Posts />} />
+//         </Routes>
+
+//       </BrowserRouter>
+
+
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+//Data Fetching Lab
 import Home from './routing/Home';
 import About from './routing/About';
 import Contact from './routing/Contact';
 
 import {BrowserRouter,Link,Routes,Route} from 'react-router-dom'
 import Posts from './fetching-data/Posts';
+import Users from './fetching-data/Users';
+import Greeting from './Greeting';
 
 function App() {
   
@@ -207,13 +249,16 @@ function App() {
       <BrowserRouter>
 
       <Link to="/">Home</Link>   |  <Link to="/about">About</Link>   |  
-      <Link to="/contact">Contact</Link>   |   <Link to="/posts">Posts</Link> 
+      <Link to="/contact">Contact</Link>   |   <Link to="/posts">Posts</Link>  |  
+      <Link to="/users">Users</Link>  |   <Link to="/greeting">Greeting</Link>  |  
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/posts" element={<Posts />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/greeting" element={<Greeting name="ramesh"/>} />
         </Routes>
 
       </BrowserRouter>
