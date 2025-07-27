@@ -110,3 +110,6 @@ export default function About() {
       )
 }
 ```
+
+### API Integration and Data Fetching
+Local Data -  JSON - [] [{},{},{},....]

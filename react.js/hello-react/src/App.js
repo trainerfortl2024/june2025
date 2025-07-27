@@ -1,4 +1,3 @@
-
 // import { useState } from 'react';
 // import Greeting from './Greeting';
 // import Employee from './passing-data/Employee';
@@ -108,79 +107,120 @@
 
 // export default App;
 
+
+
+
+
+
+
+// // lab4-routing solution below
+
+// import React, { useState } from 'react'
+// import { Router, Link, navigate } from '@reach/router';
+
+// const productList = [
+//   { id: 1, name: 'Laptop', price: 1000 },
+//   { id: 2, name: 'Mobile', price: 800 },
+//   { id: 3, name: 'Headphone', price: 600 },
+// ]
+
+// const Home = () => <h2>Home Page</h2>
+
+// const Products = ({ addToCart }) => {
+
+//   return (
+//     <div>
+//       <h3>Products</h3>
+//       {
+//         productList.map(product => (
+//           <p>{product.name} - {product.price} - &nbsp;&nbsp;
+//             <button onClick={() => addToCart(product)}>goto cart</button></p>
+//         ))
+//       }
+
+
+//     </div>
+//   )
+// }
+// const Cart = ({ cartItems }) => {
+//   return (
+//     <div>
+//       <h3>Your Cart</h3>
+//       {
+//         cartItems.length == 0 ?
+//           (<p> Your cart is empty</p>) :
+//           (cartItems.map(cart => (
+//             <p>{cart.name} - {cart.price}</p>
+//           )))}
+
+//     </div>
+//   )
+// }
+
+// export default function App() {
+//   const [cart, setCart] = useState([]);
+
+//   const addToCart = (product) => {
+//     setCart([...cart, product])
+
+//     alert(`Item ${product.name} added!  `)
+//     navigate('/cart')
+//   }
+
+//   return (
+//     <div>
+
+//       <Link to="/">Home</Link>  |
+//       <Link to="/products">Products</Link>  |
+//       <Link to="/cart">Cart</Link>
+
+//       <Router>
+//         <Home path="/" />
+//         <Home path="/home" />
+//         <Products path='products' addToCart={addToCart} />
+//         <Cart path="/cart" cartItems={cart} />
+//       </Router>
+//     </div>
+//   )
+// }
+
+
+
 // // component based architecture 
 // // MVC Model View Controller
 
 
+import Home from './routing/Home';
+import About from './routing/About';
+import Contact from './routing/Contact';
 
+import {BrowserRouter,Link,Routes,Route} from 'react-router-dom'
+import Posts from './fetching-data/Posts';
 
-import React, { useState } from 'react'
-import { Router, Link, navigate } from '@reach/router';
-
-const productList = [
-  { id: 1, name: 'Laptop', price: 1000 },
-  { id: 2, name: 'Mobile', price: 800 },
-  { id: 3, name: 'Headphone', price: 600 },
-]
-
-const Home = () => <h2>Home Page</h2>
-
-const Products = ({ addToCart }) => {
-
+function App() {
+  
   return (
     <div>
-      <h3>Products</h3>
-      {
-        productList.map(product => (
-          <p>{product.name} - {product.price} - &nbsp;&nbsp;
-            <button onClick={() => addToCart(product)}>goto cart</button></p>
-        ))
-      }
+      <h1>Welcome to React!</h1>
+      <p>This is a simple React App using JSX!</p>
 
-      
-    </div>
-  )
-}
-const Cart = ({ cartItems }) => {
-  return (
-    <div>
-      <h3>Your Cart</h3>
-      {
-        cartItems.length == 0 ?
-          (<p> Your cart is empty</p>) :
-          (cartItems.map(cart => (
-            <p>{cart.name} - {cart.price}</p>
-          )))}
+      <BrowserRouter>
+
+      <Link to="/">Home</Link>   |  <Link to="/about">About</Link>   |  
+      <Link to="/contact">Contact</Link>   |   <Link to="/posts">Posts</Link> 
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/posts" element={<Posts />} />
+        </Routes>
+
+      </BrowserRouter>
+
 
     </div>
-  )
+  );
 }
 
-export default function App() {
-  const [cart, setCart] = useState([]);
-
-  const addToCart = (product) => {
-    setCart([...cart, product])
-
-    alert(`Item ${product.name} added!  `)
-    navigate('/cart')
-  }
-
-  return (
-    <div>
-
-      <Link to="/">Home</Link>  |
-      <Link to="/products">Products</Link>  |
-      <Link to="/cart">Cart</Link>
-
-      <Router>
-        <Home path="/" />
-        <Home path="/home" />
-        <Products path='products' addToCart={addToCart} />
-        <Cart path="/cart" cartItems={cart} />
-      </Router>
-    </div>
-  )
-}
-
-
+export default App;
