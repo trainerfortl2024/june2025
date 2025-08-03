@@ -1,10 +1,11 @@
 const bodyParser = require('body-parser');
 const express = require('express')
 const mysql = require('mysql2')
+const cors = require('cors')
 
 const app = express();
 app.use(bodyParser.json())
-
+app.use(cors())
 //db connection
 const db = mysql.createConnection({
     host:'localhost',
@@ -41,6 +42,7 @@ app.post('/employee',(req,res) => {
         return res.status(201).send('Employee added')
     })
 })
+
 
 app.get('/hello',(req,res) => {
     res.send('Hello EMS...')
